@@ -1,0 +1,10 @@
+/test
+/docs
+.DS_Store
+/Push-Swap-Tester
+push_swap
+checker
+checker_Mac
+push_swap_test.sh
+traces.txt
+/obj
