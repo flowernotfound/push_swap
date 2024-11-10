@@ -6,13 +6,13 @@
 /*   By: hiroaki <hiroaki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 22:48:15 by hiroaki           #+#    #+#             */
-/*   Updated: 2024/11/10 04:01:41 by hiroaki          ###   ########.fr       */
+/*   Updated: 2024/11/11 00:21:24 by hiroaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap_bonus.h"
 
-static char	*handle_read(int fd, char *buffer, char *line, int *r)
+char	*handle_read(int fd, char *buffer, char *line, int *r)
 {
 	char	*temp;
 

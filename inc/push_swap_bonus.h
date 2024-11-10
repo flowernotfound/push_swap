@@ -6,7 +6,7 @@
 /*   By: hiroaki <hiroaki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 23:15:38 by hiroaki           #+#    #+#             */
-/*   Updated: 2024/11/10 16:45:52 by hiroaki          ###   ########.fr       */
+/*   Updated: 2024/11/11 00:21:57 by hiroaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,9 @@ char	*get_next_line(int fd);
 void	print_result(t_stack *ps, t_error err);
 t_error	process_command(t_stack *ps, char *cmd);
 t_error	execute_commands(t_stack *ps);
+void	execute_swap_push(t_stack *ps, char *cmd);
+void	execute_rotate(t_stack *ps, char *cmd);
+t_error	validate_command(char *cmd);
+char	*handle_read(int fd, char *buffer, char *line, int *r);
 
 #endif
