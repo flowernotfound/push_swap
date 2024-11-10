@@ -6,7 +6,7 @@
 /*   By: hiroaki <hiroaki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 22:39:06 by hiroaki           #+#    #+#             */
-/*   Updated: 2024/11/10 04:11:15 by hiroaki          ###   ########.fr       */
+/*   Updated: 2024/11/10 22:31:25 by hiroaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,22 +42,31 @@ static void	execute_rotate(t_stack *ps, char *cmd)
 		rrr(ps);
 }
 
-static t_error	validate_command(char *cmd)
+static t_error validate_command(char *cmd)
 {
-	const char	*valid_commands[] = {"sa\n", "sb\n", "ss\n", "pa\n", "pb\n",
-		"ra\n", "rb\n", "rr\n", "rra\n", "rrb\n", "rrr\n", NULL};
-	int			i;
+    const char *valid_commands[] = {
+        "sa\n", "sb\n", "ss\n", "pa\n", "pb\n",
+        "ra\n", "rb\n", "rr\n", "rra\n", "rrb\n", "rrr\n",
+        NULL
+    };
+    int i;
+    size_t cmd_len;
+    size_t valid_cmd_len;
+    int is_same_length;
+    int is_same_content;
 
-	i = 0;
-	while (valid_commands[i])
-	{
-		if (ft_strncmp(cmd, valid_commands[i],
-				ft_strlen(valid_commands[i])) == 0
-			&& ft_strlen(cmd) == ft_strlen(valid_commands[i]))
-			return (ERR_NONE);
-		i++;
-	}
-	return (ERR_INVALID_COMMAND);
+    i = 0;
+    while (valid_commands[i])
+    {
+        cmd_len = ft_strlen(cmd);
+        valid_cmd_len = ft_strlen(valid_commands[i]);
+        is_same_length = (cmd_len == valid_cmd_len);
+        is_same_content = (ft_strncmp(cmd, valid_commands[i], valid_cmd_len) == 0);
+        if (is_same_length && is_same_content)
+            return (ERR_NONE);
+        i++;
+    }
+    return (ERR_INVALID_COMMAND);
 }
 
 t_error	process_command(t_stack *ps, char *cmd)
