@@ -6,7 +6,7 @@
 /*   By: hiroaki <hiroaki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 20:36:43 by hiroaki           #+#    #+#             */
-/*   Updated: 2024/11/10 15:22:05 by hiroaki          ###   ########.fr       */
+/*   Updated: 2024/11/10 16:44:40 by hiroaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,8 @@
 t_stack	*init_program(int ac, char **av)
 {
 	t_stack	*ps;
-	t_error	err;
 	int		size;
 
-	err = validate_mixed_input(ac, av);
-	if (err != ERR_NONE)
-		error_exit(NULL, err);
 	size = get_stack_size(ac, av);
 	if (size == 0)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: hiroaki <hiroaki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 20:40:38 by hiroaki           #+#    #+#             */
-/*   Updated: 2024/11/10 16:06:52 by hiroaki          ###   ########.fr       */
+/*   Updated: 2024/11/10 16:44:46 by hiroaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ int		is_sorted(t_stack *ps);
 int		count_words(char *str);
 int		find_word_bounds(char *str, int *index, int *start, int *end);
 char	*get_next_word(char *str, int *index);
-t_error	validate_mixed_input(int ac, char **av);
 t_error	check_duplicates(t_stack *ps, int num);
 t_error	process_prefix(char *str, int *i, int *sign);
 t_error	convert_to_number(char *str, int i, int sign, long long *val);

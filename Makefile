@@ -22,7 +22,6 @@ SRCS = error.c \
        sort_two.c \
        utils.c \
        validate.c \
-       validate_first.c \
        validate_utils.c
 BONUS_SRCS = error.c \
              get_next_line.c \
@@ -38,7 +37,6 @@ BONUS_SRCS = error.c \
              utils_1.c \
              utils_2.c \
              validate.c \
-             validate_first.c \
              validate_utils.c
 
 SRCS := $(addprefix $(SRC_DIR)/, $(SRCS))
